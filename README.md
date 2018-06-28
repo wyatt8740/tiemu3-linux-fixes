@@ -17,8 +17,12 @@ There are still some things that don't work right. My build is using the debian
 configuration - that is:
 
 ```
-./configure --prefix=/usr --libdir=/usr/lib/[architecture, such as x86_64-linux-gnu or powerpc-linux-gnu] --sysconfdir=/etc --without-kde --disable-gdb --enable-dbus
+./configure --prefix=/usr --libdir=/usr/lib/[architecture] \
+    --sysconfdir=/etc --without-kde --disable-gdb --enable-dbus
 ```
+...Where [architecture] is the directory that your native architecture libraries
+are located in. On Debian multiarch, this would be something like
+`x86_64-linux-gnu` or `powerpc-linux-gnu`.
 
 Documentation (TeX, GNU Info) may also fail to build, but this is not vital to
 using the program and so I've not looked into it very much.
